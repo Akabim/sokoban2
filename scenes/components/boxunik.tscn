@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg72si27i5600"]
+
+[ext_resource type="Script" uid="uid://brqijeeit8m4j" path="res://scripts/box.gd" id="1_acv6y"]
+[ext_resource type="Texture2D" uid="uid://bbx25htyhlsi7" path="res://assets/Tilesheet/colored_packed.png" id="2_jxa2c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks2v0"]
+size = Vector2(16, 16)
+
+[node name="Box" type="Node2D" groups=["boxes"]]
+script = ExtResource("1_acv6y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_jxa2c")
+region_enabled = true
+region_rect = Rect2(368, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ks2v0")

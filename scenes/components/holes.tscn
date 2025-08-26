@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c26ks0swnao48"]
+
+[ext_resource type="Script" uid="uid://du63lgm0nmmvf" path="res://scripts/holes.gd" id="1_lujwi"]
+[ext_resource type="Texture2D" uid="uid://b1u7sa3o8qaaq" path="res://assets/Tilesheet/colored_packed 1(1).png" id="2_6l54i"]
+[ext_resource type="Texture2D" uid="uid://c726a5r5j6yks" path="res://assets/Tilesheet/colored_packed 1(2).png" id="3_c5iow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejbic"]
+size = Vector2(16, 16)
+
+[node name="Area2D" type="Area2D"]
+texture_filter = 1
+script = ExtResource("1_lujwi")
+open_texture = ExtResource("2_6l54i")
+closed_texture = ExtResource("3_c5iow")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ejbic")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

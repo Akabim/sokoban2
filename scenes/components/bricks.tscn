@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c31qgads5kx34"]
+
+[ext_resource type="Script" uid="uid://b3nvi325gav1u" path="res://scripts/bricks.gd" id="1_2h0l5"]
+[ext_resource type="Texture2D" uid="uid://bbx25htyhlsi7" path="res://assets/Tilesheet/colored_packed.png" id="2_k38jx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gysv1"]
+size = Vector2(14, 14)
+
+[node name="Bricks" type="CharacterBody2D"]
+script = ExtResource("1_2h0l5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_k38jx")
+region_enabled = true
+region_rect = Rect2(368, 32, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gysv1")
